@@ -1,0 +1,14 @@
+<form (ngSubmit)="vaiFormulario()">
+	<ion-item>
+		<ion-label position="floating">Numero 1</ion-label>
+		<ion-input [(ngModel)]="numero1" type="number" name="numer1"></ion-input>
+	</ion-item>
+
+	<ion-item>
+		<ion-label position="floating">Numero 2</ion-label>
+		<ion-input [(ngModel)]="numero2" type="number" name="number2"></ion-input>
+	</ion-item>
+
+	<ion-button expand="block" fill="solid" size="large" color="danger" type="submit">Somar</ion-button>
+
+</form>
