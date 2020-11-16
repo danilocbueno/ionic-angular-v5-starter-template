@@ -9,6 +9,17 @@
 		<ion-input [(ngModel)]="numero2" type="number" name="number2"></ion-input>
 	</ion-item>
 
+	<ion-item>
+		<ion-label>Operação</ion-label>
+		<ion-select [(ngModel)]="operacao" name="operacao" placeholder="Selecione um">
+			<ion-select-option value="sum">Soma</ion-select-option>
+			<ion-select-option value="mult">Multiplicação</ion-select-option>
+			<ion-select-option value="sub">Subtração</ion-select-option>
+			<ion-select-option value="div">Divisão</ion-select-option>
+
+		</ion-select>
+	</ion-item>
+
 	<ion-button expand="block" fill="solid" size="large" color="danger" type="submit">Somar</ion-button>
 
 </form>

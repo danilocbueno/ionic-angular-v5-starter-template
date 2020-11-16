@@ -9,6 +9,7 @@ import { AlertController } from "@ionic/angular";
 export class CalculadoraComponent implements OnInit {
   private numero1: number;
   private numero2: number;
+  private operacao: string;
 
   constructor(public alertController: AlertController) {}
 
@@ -16,11 +17,23 @@ export class CalculadoraComponent implements OnInit {
     const alert = await this.alertController.create({
       cssClass: "my-custom-class",
       header: "O resultado foi de:",
-      message: `${this.numero1 + this.numero2}`,
+      message: `${this.calc()}`,
       buttons: ["OK"]
     });
-
     await alert.present();
+
+    console.log(this.operacao);
+  }
+
+  calc() {
+    let total = 0;
+    switch(this.operacao) {
+      case "sum": total = this.numero1 + this.numero2; break;
+      case "sub": total = this.numero1 - this.numero2; break;
+      case "mult": total = this.numero1 * this.numero2; break;
+      case "div": total = this.numero1 / this.numero2; break;
+    }
+    return total;
   }
 
   ngOnInit() {}
